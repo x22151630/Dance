@@ -26,22 +26,24 @@ SECRET_KEY = 'django-insecure-l2mt*tm^03fqid=d!f2m7l2i-f@sz%u#w+45dtgr@ufpq8y#pr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['825c6182221d488a8d141eacb5f8d84f.vfs.cloud9.eu-west-1.amazonaws.com']
+ALLOWED_HOSTS = ['825c6182221d488a8d141eacb5f8d84f.vfs.cloud9.eu-west-1.amazonaws.com','74704becc5eb4c4e84e456d89888c234.vfs.cloud9.eu-west-1.amazonaws.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'dance.apps.DanceConfig',
+    #'dance.apps.DanceConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'dance'
 ]
 
 MIDDLEWARE = [
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -117,12 +119,24 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+    BASE_DIR / "static",
+)
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://74704becc5eb4c4e84e456d89888c234.vfs.cloud9.eu-west-1.amazonaws.com',
+    
+]
