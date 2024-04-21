@@ -149,5 +149,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CSRF_TRUSTED_ORIGINS = [
     'https://74704becc5eb4c4e84e456d89888c234.vfs.cloud9.eu-west-1.amazonaws.com',
+    'https://x22151630-dance-env.eba-jwyzbamb.eu-west-1.elasticbeanstalk.com'
     
 ]
