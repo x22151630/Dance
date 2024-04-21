@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-l2mt*tm^03fqid=d!f2m7l2i-f@sz%u#w+45dtgr@ufpq8y#pr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['x22151630-dance-env.eba-jwyzbamb.eu-west-1.elasticbeanstalk.com','74704becc5eb4c4e84e456d89888c234.vfs.cloud9.eu-west-1.amazonaws.com']
 
 
