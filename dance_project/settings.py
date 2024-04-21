@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-l2mt*tm^03fqid=d!f2m7l2i-f@sz%u#w+45dtgr@ufpq8y#pr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['825c6182221d488a8d141eacb5f8d84f.vfs.cloud9.eu-west-1.amazonaws.com','74704becc5eb4c4e84e456d89888c234.vfs.cloud9.eu-west-1.amazonaws.com']
+ALLOWED_HOSTS = ['x22151630-dance-env.eba-jwyzbamb.eu-west-1.elasticbeanstalk.com','74704becc5eb4c4e84e456d89888c234.vfs.cloud9.eu-west-1.amazonaws.com']
 
 
 # Application definition
@@ -77,10 +77,20 @@ WSGI_APPLICATION = 'dance_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+#DATABASES = {
+    #'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+    #}
+#}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'Mayuri-001',
+        'HOST': 'dance-app-database.cwannoe42pdl.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
