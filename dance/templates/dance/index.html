@@ -129,21 +129,15 @@
                   </div>
                </div>
                <div class="classes_section_2">
-                  {% for dance in dance_styles %}
+                  {% for dance in newest_dance %}
                   <div class="row">
                      <div class="col-md-6">
 
-                        <div class="classes_img"><img src="{% static dance.image_url %}" ></div>
-                        <h3 class="astanga_taital">{{dance.title}}</h3>
-                        <p class="astanga_text">{{dance.dance_info}}</p>
-                     </div>
-                     <div class="row">
-                     <div class="col-md-6">
                         <div class="classes_img"><img src={{dance.image_url}}></div>
                         <h3 class="astanga_taital">{{dance.title}}</h3>
                         <p class="astanga_text">{{dance.dance_info}}</p>
                      </div>
-                  </div>
+                     
                </div>
                {% endfor %}
             </div>   
