@@ -18,6 +18,8 @@
       <!-- bootstrap css -->
       
       {% load static %}
+      <link rel="stylesheet" href="{% static 'css/admin-style.css' %}">
+
       <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
       <!-- style css -->
       <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
@@ -104,7 +106,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-md-6">
-                     <div class="about_img"><img src="{% static 'images/img4.png' %}"></div>
+                     <div class="about_img"><img src="{% static 'images/img4.jpg' %}"></div>
                   </div>
                   <div class="col-md-6">
                      <div class="about_taital_main">
@@ -137,7 +139,6 @@
                         <h3 class="astanga_taital">{{dance.title}}</h3>
                         <p class="astanga_text">{{dance.dance_info}}</p>
                      </div>
-                     
                </div>
                {% endfor %}
             </div>   
