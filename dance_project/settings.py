@@ -30,6 +30,12 @@ DEBUG = True
 ALLOWED_HOSTS = ['x22151630-dance-env.eba-jwyzbamb.eu-west-1.elasticbeanstalk.com','74704becc5eb4c4e84e456d89888c234.vfs.cloud9.eu-west-1.amazonaws.com']
 
 
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,11 +46,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dance'
+    'dance',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -52,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+     "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'dance_project.urls'
@@ -59,7 +70,7 @@ ROOT_URLCONF = 'dance_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [os.path.join(BASE_DIR,"templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,7 +98,7 @@ WSGI_APPLICATION = 'dance_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'dancedatabase',
         'USER': 'postgres',
         'PASSWORD': 'Mayuri-001',
         'HOST': 'dance-app-database.cwannoe42pdl.us-east-1.rds.amazonaws.com',
@@ -152,4 +163,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://x22151630-dance-env.eba-jwyzbamb.eu-west-1.elasticbeanstalk.com'
     
 ]
-LOGIN_URL = '/login/'
+#LOGIN_URL = '/login/'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+LOGIN_REDIRECT_URL = '/index'

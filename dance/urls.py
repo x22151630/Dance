@@ -1,11 +1,13 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from .views import CustomLoginView
 
 app_name = 'dance'
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('login', CustomLoginView.as_view(), name='login'),
+    path('index', views.index, name='index'),
+    #path("home",login),
+    path('', views.login_user, name='login'),
+
     
 ]
