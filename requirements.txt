@@ -33,3 +33,4 @@ tomlkit==0.12.4
 typing_extensions==4.10.0
 urllib3==2.2.1
 yamllint==1.35.1
+password-strength-checker==0.2
